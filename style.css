@@ -1,0 +1,215 @@
+/* style.css */
+
+/* Basic Reset & Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the container */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px; /* Max width for content */
+    width: 100%; /* Full width on smaller screens */
+    margin: 20px auto; /* Center the container with some margin */
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px); /* Adjust for body padding */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    font-size: 2.8em;
+    color: #007bff; /* A vibrant blue */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Recommender Section Styles */
+.recommender-section {
+    flex-grow: 1; /* Allow this section to take available space */
+    display: flex;
+    flex-direction: column; /* Stack input and display areas */
+    gap: 30px; /* Space between input and display sections */
+}
+
+.input-area {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-area label {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+textarea#preferenceInput {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 100px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea#preferenceInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+button#getRecommendationBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    align-self: flex-end; /* Align button to the right */
+}
+
+button#getRecommendationBtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+button#getRecommendationBtn:active {
+    transform: translateY(0);
+}
+
+/* Recommendations Display Styles */
+.recommendations-display {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    margin-top: 20px; /* Space from input area */
+}
+
+.recommendations-display h2 {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#recommendationsOutput {
+    min-height: 150px; /* Ensure some space for output */
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    font-size: 1.05em;
+    white-space: pre-wrap; /* Preserves whitespace and wraps text */
+    word-wrap: break-word; /* Breaks long words */
+}
+
+.placeholder-text,
+.loading-text,
+.error-text {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    margin-top: 10px;
+}
+
+.loading-text {
+    color: #007bff; /* Loading message is blue */
+    font-weight: bold;
+}
+
+.error-text {
+    color: #dc3545; /* Error message is red */
+    font-weight: bold;
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none !important;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .input-area label {
+        font-size: 1em;
+    }
+
+    button#getRecommendationBtn {
+        width: 100%;
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        border-radius: 0; /* No border-radius on very small screens */
+        box-shadow: none; /* No shadow on very small screens */
+        min-height: 100vh; /* Take full height */
+        padding: 15px;
+    }
+}

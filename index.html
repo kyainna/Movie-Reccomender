@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>AI-Powered Recommender</h1>
+            <p>Tell me your preferences, and I'll suggest recipes, books, or movies!</p>
+        </header>
+
+        <main class="recommender-section">
+            <div class="input-area">
+                <label for="preferenceInput">What are you looking for? (e.g., "quick healthy dinner", "fantasy adventure books", "sci-fi movies with aliens")</label>
+                <textarea id="preferenceInput" rows="4" placeholder="Type your preferences here..."></textarea>
+                <button id="getRecommendationBtn">Get Recommendations</button>
+            </div>
+
+            <div class="recommendations-display">
+                <h2>Your Recommendations:</h2>
+                <div id="recommendationsOutput">
+                    <p class="placeholder-text">Recommendations will appear here after you click "Get Recommendations".</p>
+                </div>
+                <p class="loading-text hidden">Generating recommendations... please wait.</p>
+                <p class="error-text hidden">An error occurred. Please try again or refine your input.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AI-Powered Recommender. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
